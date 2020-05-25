@@ -3,7 +3,7 @@ from typing import List
 from augment.augmentors.models import Augmentor
 
 
-class TranslateAugmentor(Augmentor):
+class TranslationAugmentor(Augmentor):
 
     augmentation_type: str = 'translation'
 
