@@ -1,6 +1,6 @@
-from augment.augmentors.translate.translate_augmentor import TranslateAugmentor
+from augment.augmentors.translation.translation_augmentor import TranslationAugmentor
 
 
 if __name__ == '__main__':
-    # TranslateAugmentor().augment()
-    TranslateAugmentor().test_augmentation_on_sample()
+    # TranslationAugmentor().augment()
+    TranslationAugmentor().test_augmentation_on_sample()
