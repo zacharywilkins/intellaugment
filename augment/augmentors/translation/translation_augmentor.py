@@ -1,7 +1,7 @@
 from typing import List
 
 from augment.augmentors.models import Augmentor
-from augment.augmentors.translation.translate import Translator
+from augment.augmentors.translation.translate_text import Translator
 
 
 class TranslationAugmentor(Augmentor):
