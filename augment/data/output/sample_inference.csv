@@ -1,0 +1,15 @@
+text,label,hypothesis,augmented_text
+A man inspects the uniform of a figure in some East Asian country.,contradiction,The man is sleeping,A man checks the uniform of a figure in some East Asian country.
+A man inspects the uniform of a figure in some East Asian country.,contradiction,The man is sleeping,A man inspects the uniform of a figure in a country in East Asia.
+A man inspects the uniform of a figure in some East Asian country.,contradiction,The man is sleeping,A man inspects the uniform of a figure in some East Asian country.
+An older and younger man smiling.,neutral,Two men are smiling and laughing at the cats playing on the floor.,An older and younger man smiling.
+An older and younger man smiling.,neutral,Two men are smiling and laughing at the cats playing on the floor.,A larger and younger man smiling.
+A black race car starts up in front of a crowd of people.,contradiction,A man is driving down a lonely road.,A black race car starts up in front of a crowd of people.
+A black race car starts up in front of a crowd of people.,contradiction,A man is driving down a lonely road.,A black race car starts in front of a crowd.
+A black race car starts up in front of a crowd of people.,contradiction,A man is driving down a lonely road.,A black car race starts in front of a crowd of people.
+A soccer game with multiple males playing.,entailment,Some men are playing a sport.,A soccer game with multiple males playing.
+A soccer game with multiple males playing.,entailment,Some men are playing a sport.,A football match with several males playing.
+A soccer game with multiple males playing.,entailment,Some men are playing a sport.,to play a soccer game with multiple males.
+A smiling costumed woman is holding an umbrella.,neutral,A happy woman in a fairy costume holds an umbrella.,A smiling costumed woman is holding an umbrella.
+A smiling costumed woman is holding an umbrella.,neutral,A happy woman in a fairy costume holds an umbrella.,A smiling costumed woman holding an umbrella.
+A smiling costumed woman is holding an umbrella.,neutral,A happy woman in a fairy costume holds an umbrella.,A woman in costume is smiling holding an umbrella.
