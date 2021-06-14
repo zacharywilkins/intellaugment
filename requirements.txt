@@ -1,1 +1,1 @@
-googletrans==2.4.0
+googletrans==4.0.0rc1

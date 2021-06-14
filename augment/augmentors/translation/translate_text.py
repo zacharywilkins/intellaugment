@@ -13,20 +13,35 @@ class Translator:
 
     @property
     def detected_lang(self) -> str:
-        response = GoogleTranslator().detect(self.original_text)
-        return response.lang
+        try:
+            response = GoogleTranslator().detect(self.original_text)
+            lang = response.lang
+        except:
+            lang = 'en'
+        return lang
+
+    def handle_google_translate_call(self, text, to_lang, from_lang) -> str:
+        try:
+            response = GoogleTranslator().translate(
+                text, to_lang, from_lang
+            )
+            translation = response.text
+        except Exception as e: # Fall back to returning original string
+            logger.warning(f"Call to Google Translate failed with this error: {e}")
+            translation = text
+        return translation
 
     def translate_and_re_translate(self) -> str:
         if self.detected_lang != self.from_lang:
             logger.warning(f"Original input not in expected language('{self.from_lang}')")
             return self.original_text
 
-        translation_response = GoogleTranslator().translate(
+        translation_response = self.handle_google_translate_call(
             self.original_text, self.to_lang, self.from_lang
         )
-        translated_text = translation_response.text
-        retranslation_response = GoogleTranslator().translate(
+        translated_text = translation_response
+        retranslation_response = self.handle_google_translate_call(
             translated_text, self.from_lang, self.to_lang
         )
 
-        return retranslation_response.text
+        return retranslation_response
