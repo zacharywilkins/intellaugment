@@ -12,8 +12,12 @@ parser.add_argument("-t", "--text", default=False, help="Pass in an example stri
 
 if __name__ == '__main__':
     args = parser.parse_args()
+
     logging.basicConfig(level=logging.DEBUG)
-    logging.getLogger("urllib3").setLevel(logging.WARNING)
+    libraries_to_suppress = ["urllib3", "hpack", "httpx"]
+    for library in libraries_to_suppress:
+        logging.getLogger(library).setLevel(logging.WARNING)
+
     if args.csv:
         TranslationAugmentor().augment_csv(args.csv)
     if args.sample:
