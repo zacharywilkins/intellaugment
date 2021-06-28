@@ -1,6 +1,7 @@
 import argparse
 import logging
 
+from augment.augmentors.relocation.relocation_augmentor import RelocationAugmentor
 from augment.augmentors.translation.translation_augmentor import TranslationAugmentor
 from augment.augmentors.noise.noise_augmentor import NoiseAugmentor
 
@@ -11,6 +12,7 @@ parser.add_argument("-c", "--csv", default=False, help="Run Augmentor on CSV fil
 parser.add_argument("-s", "--sample", default=False, action='store_true', help="Run Augmentor against static sample CSV.")
 parser.add_argument("-t", "--text", default=False, help="Pass in an example string to augment from the command line.")
 
+all_augmentors = [TranslationAugmentor(), NoiseAugmentor(), RelocationAugmentor()]
 
 if __name__ == '__main__':
     args = parser.parse_args()
@@ -24,7 +26,8 @@ if __name__ == '__main__':
         TranslationAugmentor().augment_csv(args.csv)
     if args.sample:
         # TranslationAugmentor().try_augmentation_on_sample_csv()
-        NoiseAugmentor().try_augmentation_on_sample_csv()
+        # NoiseAugmentor().try_augmentation_on_sample_csv()
+        RelocationAugmentor().try_augmentation_on_sample_csv()
     if args.text:
         TranslationAugmentor().try_augmentation_on_string(args.text)
         # Try out "I am calm, glad, surprised and content"

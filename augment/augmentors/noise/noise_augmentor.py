@@ -68,5 +68,5 @@ class NoiseAugmentor(Augmentor):
         return text
 
     def augment(self, text: str) -> List[str]:
-        augmented_examples = [self.prepend_noise(text), self.append_noise(text)]
+        augmented_examples = [self.prepend_noise(text), self.append_noise(text)] # Add de-noiser
         return augmented_examples
