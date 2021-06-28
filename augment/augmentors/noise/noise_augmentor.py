@@ -32,24 +32,28 @@ class NoiseAugmentor(Augmentor):
         discourse_markers = self.load_discourse_markers()
         discourse_marker = discourse_markers[self.discourse_marker_counter]
 
-        new_text = ""
         if discourse_marker.lower() not in text.lower():
             new_text = discourse_marker + " " + text[0].lower() + text[1:]
             self.discourse_marker_counter += 1
             # Need to implement counter re-starter
-        return new_text
+            return new_text
+        return text
 
     def append_noise(self, text: str) -> str:
         discourse_markers = self.load_discourse_markers()
         discourse_marker = discourse_markers[self.discourse_marker_counter]
 
-        new_text = ""
-        re_end_of_sentence = r"\w[.!?]?$"
-        ends_with_word = re.match(re_end_of_sentence, text, re.IGNORECASE)
+        re_end_of_declarative = r"\w\.?\s*$"
+        ends_with_word = re.match(re_end_of_declarative, text, re.IGNORECASE)
+        print("text", text)
+        print("re_end_of_declarative", re_end_of_declarative)
+        print("ends_with_word", ends_with_word)
         if discourse_marker.lower() not in text.lower() and ends_with_word:
-            new_text = re.sub(re_end_of_sentence, text[:-1] + discourse_marker.lower() + text[-1], text)
+            new_text = text
+            re.sub(re_end_of_declarative, text[:-1] + discourse_marker.lower() + text[-1], new_text)
             self.discourse_marker_counter += 1
-        return new_text
+            return new_text
+        return text
 
     def augment(self, text: str) -> List[str]:
         # augmented_examples = [self.prepend_noise(text), self.append_noise(text)]
