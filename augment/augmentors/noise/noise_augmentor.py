@@ -7,6 +7,12 @@ from augment.utils import AUGMENT_HOME
 
 
 class NoiseAugmentor(Augmentor):
+    """
+        This augmentor adds pragmatic linguistic "noise",
+        i.e. content that can affect an utterance's
+        contextual meaning, but has no material impact
+        on its standalone semantic content.
+    """
     augmentation_type: str = 'noise'
     clause_boundary_discourse_markers: list = []
     discourse_marker_counter: int = 0
