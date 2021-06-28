@@ -5,8 +5,8 @@ import re
 from augment.augmentors.models import Augmentor
 from augment.utils import AUGMENT_HOME
 
-class NoiseAugmentor(Augmentor):
 
+class NoiseAugmentor(Augmentor):
     augmentation_type: str = 'noise'
     clause_boundary_discourse_markers: list = []
     discourse_marker_counter: int = 0
@@ -14,6 +14,11 @@ class NoiseAugmentor(Augmentor):
     def __init__(self):
         self.discourse_markers = self.load_discourse_markers()
         self.num_discourse_markers = len(self.discourse_markers)
+
+    def increment_discourse_marker_counter(self):
+        self.discourse_marker_counter += 1
+        if self.discourse_marker_counter == self.num_discourse_markers:
+            self.discourse_marker_counter = 0
 
     def load_discourse_markers(self) -> List[str]:
         """
@@ -34,7 +39,7 @@ class NoiseAugmentor(Augmentor):
 
         if discourse_marker.lower() not in text.lower():
             new_text = discourse_marker + " " + text[0].lower() + text[1:]
-            self.discourse_marker_counter += 1
+            self.increment_discourse_marker_counter()
             # Need to implement counter re-starter
             return new_text
         return text
@@ -43,19 +48,19 @@ class NoiseAugmentor(Augmentor):
         discourse_markers = self.load_discourse_markers()
         discourse_marker = discourse_markers[self.discourse_marker_counter]
 
-        re_end_of_declarative = r"\w\.?\s*$"
-        ends_with_word = re.match(re_end_of_declarative, text, re.IGNORECASE)
-        print("text", text)
-        print("re_end_of_declarative", re_end_of_declarative)
-        print("ends_with_word", ends_with_word)
+        # Regex excludes exclamatives/interrogatives to improve naturalness:
+        re_end_of_declarative = re.compile(r"(?<=\w)\s*\.?\s*$")
+        ends_with_word = re_end_of_declarative.search(text, re.IGNORECASE)
+
         if discourse_marker.lower() not in text.lower() and ends_with_word:
             new_text = text
-            re.sub(re_end_of_declarative, text[:-1] + discourse_marker.lower() + text[-1], new_text)
-            self.discourse_marker_counter += 1
+            new_text = re_end_of_declarative.sub(" " + discourse_marker.lower(), new_text)
+            if text.endswith("."):
+                new_text = new_text + "."
+            self.increment_discourse_marker_counter()
             return new_text
         return text
 
     def augment(self, text: str) -> List[str]:
-        # augmented_examples = [self.prepend_noise(text), self.append_noise(text)]
-        augmented_examples = [self.append_noise(text)]
+        augmented_examples = [self.prepend_noise(text), self.append_noise(text)]
         return augmented_examples
