@@ -6,7 +6,13 @@ from augment.augmentors.translation.translate_text import Translator
 
 
 class TranslationAugmentor(Augmentor):
-
+    """
+        This augmentor translates English text into other languages (e.g.
+        Spanish and German) and back into English, in order to alter
+        the sentence while maintaining its core semantic meaning. For example,
+        Spanish often increases the "register", i.e formality, of an
+        utterance, whereas German tends to relocate prepositional phrases.
+    """
     augmentation_type: str = 'translation'
 
     def augment_using_spanish(self, text: str) -> str:
