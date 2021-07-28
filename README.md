@@ -44,3 +44,8 @@ This implementation can be utilized for a wide variety of machine learning tasks
 * machine translation
 * summarization
 * topic labeling
+
+
+## License
+`intellaugment` is released under the MIT License.
+
