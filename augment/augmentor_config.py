@@ -15,6 +15,7 @@ class AugmentorConfig(ABC):
         'translation': TranslationAugmentor,
         'noise': NoiseAugmentor
     }
+    all_augmentor_keys = augmentor_keys_to_classes.keys()
 
     def __init__(self, augmentor_keys: list):
         if augmentor_keys is None:
@@ -30,6 +31,8 @@ class AugmentorConfig(ABC):
              this method defaults to including all augmentor classes in the
              output.
         """
+        if not augmentor_keys:
+            augmentor_keys = self.all_augmentor_keys
         augmentor_classes = []
         for key in augmentor_keys:
             if key in self.augmentor_keys_to_classes:
@@ -42,7 +45,9 @@ class AugmentorConfig(ABC):
              augmented example strings.
         """
         new_texts = []
-        for
+        for Augmentor in self.augmentor_classes:
+            new_texts.extend(Augmentor.augment(text))
+        return new_texts
 
     def augment_csv(self, csv_file) -> None:
         """
