@@ -57,9 +57,9 @@ class AugmentorConfig(ABC):
             Takes a csv file as input and saves an augmented version of that
              csv to the current working directory. Returns nothing.
         """
-        try self.validate_csv():
-            output_filename = 'augmented_data.csv'
-        except:
+        if self.validate_csv(csv_file) is False:
             raise NotImplementedError
+        else:
+            output_filename = 'augmented_data.csv'
 
 
