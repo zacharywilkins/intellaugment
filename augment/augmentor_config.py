@@ -49,10 +49,17 @@ class AugmentorConfig(ABC):
             new_texts.extend(Augmentor.augment(text))
         return new_texts
 
+    def validate_csv(self, csv_file) -> bool:
+        return True
+
     def augment_csv(self, csv_file) -> None:
         """
             Takes a csv file as input and saves an augmented version of that
              csv to the current working directory. Returns nothing.
         """
-        output_filename = 'augmented_data.csv'
+        try self.validate_csv():
+            output_filename = 'augmented_data.csv'
+        except:
+            raise NotImplementedError
+
 
