@@ -13,15 +13,25 @@ To give the augmentation a try, you can run `python3 augment_tester.py --sample`
 | A soccer game with multiple males playing. | entailment | Some men are playing a sport. |
 | A smiling costumed woman is holding an umbrella. | neutral | 	A happy woman in a fairy costume holds an umbrella. |
 
-...and increase the number of training samples by 5x, returning the following .csv as output:
+...and increase the number of training samples by 2-5x, returning the following .csv as output:
 
 | Text  | Judgments | Hypothesis |
 | ------------- | ------------- | ------------- |
-| A man inspects the uniform of a figure in some East Asian country.  | contradiction | The man is sleeping |
-| An older and younger man smiling.  | neutral | Two men are smiling and laughing at the cats playing on the floor. |
+| A man inspects the uniform of a figure in some East Asian country. | contradiction | The man is sleeping |
+| A man inspects the uniform of a figure in an eastern Asian country. | contradiction | The man is sleeping |
+| A man inspects the uniform of a figure in some Oriental Asia country. | contradiction | The man is sleeping |
+| A man inspects the uniform of a figure in some Oriental Asia country anyway. | contradiction | The man is sleeping |
+| An older and younger man smiling. | neutral | Two men are smiling and laughing at the cats playing on the floor. |
+| An older and younger man smiling basically. | neutral | Two men are smiling and laughing at the cats playing on the floor. |
 | A black race car starts up in front of a crowd of people. | contradiction | A man is driving down a lonely road. |
+| A black racing car starts in front of a crowd. | contradiction | A man is driving down a lonely road. |
+| Apparently a black race car starts up in front of a crowd of people. | contradiction | A man is driving down a lonely road. |
 | A soccer game with multiple males playing. | entailment | Some men are playing a sport. |
-| A smiling costumed woman is holding an umbrella. | neutral | 	A happy woman in a fairy costume holds an umbrella. |
+| A football game with multiple males playing. | entailment | Some men are playing a sport. |
+| Certainly a soccer game with multiple males playing. | entailment | Some men are playing a sport. |
+| A smiling costumed woman is holding an umbrella. | neutral | A happy woman in a fairy costume holds an umbrella. |
+| A smiling dressed woman is holding an umbrella. | neutral | A happy woman in a fairy costume holds an umbrella. |
+| Conceivably a smiling costumed woman is holding an umbrella. | neutral | A happy woman in a fairy costume holds an umbrella. |
 
 
 ## Usage

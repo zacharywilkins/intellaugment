@@ -27,7 +27,7 @@ if __name__ == '__main__':
     if args.sample:
         # TranslationAugmentor().try_augmentation_on_sample_csv()
         # NoiseAugmentor().try_augmentation_on_sample_csv()
-        RelocationAugmentor().try_augmentation_on_sample_csv()
+        TranslationAugmentor().try_augmentation_on_sample_csv()
     if args.text:
         TranslationAugmentor().try_augmentation_on_string(args.text)
         # Try out "I am calm, glad, surprised and content"
