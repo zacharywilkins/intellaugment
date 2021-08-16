@@ -35,6 +35,7 @@ class Augmentor(ABC):
 
     def try_augmentation_on_string(self, text: str) -> List[str]:
         print(self.augment_unique(text))
+        return self.augment_unique(text)
 
     def try_augmentation_on_sample_csv(self):
         logging.debug(f" Testing augmentation for Augmentor '{self.augmentation_type}'")
