@@ -34,7 +34,7 @@ class Augmentor(ABC):
         return list(set(all_examples))
 
     def try_augmentation_on_string(self, text: str) -> List[str]:
-        print(self.augment_unique(text))
+        logging.debug(self.augment_unique(text))
         return self.augment_unique(text)
 
     def try_augmentation_on_sample_csv(self):
