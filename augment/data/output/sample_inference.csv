@@ -1,6 +1,0 @@
-text,label,hypothesis,augmented_text
-A man inspects the uniform of a figure in some East Asian country.,contradiction,The man is sleeping,A man inspects the uniform of a figure in some East Asian country.
-An older and younger man smiling.,neutral,Two men are smiling and laughing at the cats playing on the floor.,An older and younger man smiling.
-A black race car starts up in front of a crowd of people.,contradiction,A man is driving down a lonely road.,A black race car starts up in front of a crowd of people.
-A soccer game with multiple males playing.,entailment,Some men are playing a sport.,A soccer game with multiple males playing.
-A smiling costumed woman is holding an umbrella.,neutral,A happy woman in a fairy costume holds an umbrella.,A smiling costumed woman is holding an umbrella.

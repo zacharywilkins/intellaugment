@@ -1,4 +1,4 @@
 .idea
 *.pyc
 venv
-**/sample_inference.csv
+augment/data/output/
