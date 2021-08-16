@@ -44,7 +44,7 @@ Next, place the training set that you would like to augment as a `.csv` file ins
 To run the tests for this application, install `pytest` using `pip3 install pytest` and then run `pytest -m tests/`.
 
 
-## Applications
+## Machine Learning Applications
 This implementation can be utilized for a wide variety of machine learning tasks, including but not limited to:
 * textual entailment
 * question answering
@@ -58,4 +58,3 @@ This implementation can be utilized for a wide variety of machine learning tasks
 
 ## License
 `intellaugment` is released under the MIT License.
-
