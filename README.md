@@ -20,7 +20,7 @@ To give the augmentation a try, you can run `python3 augment_tester.py --sample`
 | A man inspects the uniform of a figure in some East Asian country. | contradiction | The man is sleeping |
 | A man inspects the uniform of a figure in an eastern Asian country. | contradiction | The man is sleeping |
 | A man inspects the uniform of a figure in some Oriental Asia country. | contradiction | The man is sleeping |
-| A man inspects the uniform of a figure in some Oriental Asia country anyway. | contradiction | The man is sleeping |
+| A man inspects the uniform of a figure in some East Asian country anyway. | contradiction | The man is sleeping |
 | An older and younger man smiling. | neutral | Two men are smiling and laughing at the cats playing on the floor. |
 | An older and younger man smiling basically. | neutral | Two men are smiling and laughing at the cats playing on the floor. |
 | A black race car starts up in front of a crowd of people. | contradiction | A man is driving down a lonely road. |
