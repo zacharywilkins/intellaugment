@@ -41,7 +41,7 @@ Next, place the training set that you would like to augment as a `.csv` file ins
 
 
 ## Testing
-To run the tests for this application, install pytest using `pip3 install pytest` and then run `pytest -m tests/`.
+To run the tests for this application, install `pytest` using `pip3 install pytest` and then run `pytest -m tests/`.
 
 
 ## Applications
