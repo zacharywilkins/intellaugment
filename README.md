@@ -37,7 +37,7 @@ Example output:
 
 
 ## Testing
-To run the tests for this application, install `pytest` using `pip3 install pytest` and then run `pytest test_augmentors.py`.
+To run the tests for this application, install `pytest` using `pip3 install pytest,` and then run `pytest test_augmentors.py`.
 
 
 ## Machine Learning Applications
