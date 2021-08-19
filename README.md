@@ -1,9 +1,9 @@
 # intellaugment
-`intellaugment` is an NLP tool for textual data augmentation written in Python by Zachary Wilkins. It uses techniques from the linguistic sub-fields of Syntax, Semantics and Pragmatics to massively augment training sets used by models for virtually any NLP task. ...and increase the number of training samples by 2-5x, returning the following .csv as output:
+`intellaugment` is an NLP tool for textual data augmentation written in Python by Zachary Wilkins. It uses techniques from the linguistic sub-fields of Syntax, Semantics and Pragmatics to massively augment training sets used by models for virtually any NLP task. It can be used on the training set for any NLP model t oincrease the number of training samples by 2-5x, depending on the nature of the training data.
 
 
 ## Sample
-To give the augmentation a try, you can run `python3 augment_tester.py --sample` from the command line. It will run the augmentation algorithm on a sample of data taken from from [the Stanford Natural Language Inference corpus](https://nlp.stanford.edu/projects/snli/). The resulting output will increase the number of training samples by 2-5x, depending on the nature of the training data.
+To give the augmentation a try, you can run `python3 augment_tester.py --sample` from the command line. It will run the augmentation algorithm on a sample of data taken from from [the Stanford Natural Language Inference corpus](https://nlp.stanford.edu/projects/snli/).
 
 Example input:
 
