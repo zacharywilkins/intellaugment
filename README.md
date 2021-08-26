@@ -52,6 +52,19 @@ This implementation can be utilized for a wide variety of machine learning tasks
 * topic labeling
 
 
+## Implementation 
+
+The implementation of this data augmentation algorithm centers around several different "Augmentors", or components in the system that use different NLP and/or linguistic techniques to generate new samples with the same semantic meaning. 
+
+| Name | Description |
+| ----- | ------------- | 
+| Augmentor | The base class from which all other Augmentors inherit a set of core methods. These methods include testing the augmentor on a single string input, on an input .csv file. See `models.py`. | 
+| TranslationAugmentor | This Augmentor translates English text into other languages (e.g. Spanish and German) and back into English, in order to alter the sentence while maintaining its core semantic meaning. Two calls to the Google Translate API are used to achieve this. | 
+| NoiseAugmentor | This augmentor adds pragmatic linguistic "noise", i.e. content that can affect an utterance's contextual meaning, but has no material impact on its standalone semantic content, particularly utterance-modifying adverbs. | 
+| RelocationAugmentor | This Augmentor moves core semantic content from one part of an utterance to a different part of the utterance, in such a way that the truth-conditional meaning of the utterance is unchanged. For example, given the training sample "The musician will blow the audience away.", this Augmentor would also generate the sample "The musician will blow away the audience." | 
+
+
+
 ## License
 `intellaugment` is released under the MIT License.
 
